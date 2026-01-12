@@ -1,9 +1,10 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Popup from "./components/Popup";
-import Support from "./components/Support"
+import Support from "./components/Support";
+import ScrollToTop from "./components/ScrollToTop";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -14,6 +15,8 @@ import Login from "./pages/Login";
 function App() {
   return (
     <>
+      <ScrollToTop />
+
       <Navbar />
 
       <Routes>
@@ -24,11 +27,9 @@ function App() {
         <Route path="/login" element={<Login />} />
       </Routes>
 
-
       <Popup />
       <Support />
       <Footer />
-
     </>
   );
 }

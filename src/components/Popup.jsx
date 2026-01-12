@@ -7,7 +7,7 @@ const Popup = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setVisible(true);
-    }, 3000);
+    }, 12000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -17,6 +17,12 @@ const Popup = () => {
   return (
     <div className="trust-popup-overlay">
       <div className="trust-popup">
+
+        {/* Logo circle */}
+        <div className="trust-logo">
+          <img src="/images/logo.jpeg" alt="logo" />
+        </div>
+
         <button
           className="trust-close"
           onClick={() => setVisible(false)}
@@ -49,6 +55,7 @@ const Popup = () => {
             <p>TRUSTED</p>
           </div>
         </div>
+
       </div>
     </div>
   );
