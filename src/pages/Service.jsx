@@ -1,11 +1,8 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import "./Pages.css";
 
 export default function ServiceSlider() {
-  const sliderRef = useRef(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
-
   const services = [
     {
       title: "Home Loans",
@@ -19,49 +16,52 @@ export default function ServiceSlider() {
     },
     {
       title: "Loan Against Property",
-      desc: "We provide loan against property with high value funding, low interest rates, and flexible repayment options.",
+      desc: "High value funding with flexible repayment options.",
       image: "/images/loanagainstproperty.png",
     },
     {
       title: "Mortgage Loan",
-      desc: "We offer secure mortgage loans with competitive rates and flexible repayment terms.",
+      desc: "Secure mortgage loans with competitive rates.",
       image: "/images/mortgage.png",
     },
     {
       title: "Balance Transfer",
-      desc: "We help you switch your loan to lower interest rates with easy and hassle-free balance transfer.",
+      desc: "Switch to lower interest rates easily.",
       image: "/images/balancetransfer.png",
     },
     {
       title: "ITR Filing",
-      desc: "Digital banking solution enabling SMEs to manage finance and real-time reporting.",
+      desc: "Fast & secure income tax filing services.",
       image: "/images/itrfiling.png",
     },
   ];
 
+  const CARD_WIDTH = 260;
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   const nextSlide = () => {
-    if (currentIndex < services.length - 1) {
-      setCurrentIndex(currentIndex + 1);
-    }
+    setCurrentIndex((prev) => (prev + 1) % services.length);
   };
 
   const prevSlide = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    }
+    setCurrentIndex((prev) =>
+      prev === 0 ? services.length - 1 : prev - 1
+    );
   };
 
   return (
     <>
       {/* ================= SERVICES SLIDER ================= */}
       <div className="service-wrapper">
+        {/* STATIC IMAGE */}
         <div className="service-image-box">
           <img
             src={services[currentIndex].image}
-            alt="Service Visual"
+            alt={services[currentIndex].title}
           />
         </div>
 
+        {/* SLIDER */}
         <div className="service-slider-area">
           <div className="service-slider-controls">
             <button className="service-arrow" onClick={prevSlide}>←</button>
@@ -71,11 +71,17 @@ export default function ServiceSlider() {
           <div className="service-slider">
             <div
               className="service-slider-track"
-              style={{ transform: `translateX(-${currentIndex * 220}px)` }}
-              ref={sliderRef}
+              style={{
+                transform: `translateX(-${currentIndex * CARD_WIDTH}px)`
+              }}
             >
               {services.map((item, i) => (
-                <div className="service-card" key={i}>
+                <div
+                  key={i}
+                  className={`service-card ${
+                    i === currentIndex ? "active" : ""
+                  }`}
+                >
                   <h3>{item.title}</h3>
                   <p>{item.desc}</p>
                   <a href="#">Read More →</a>
@@ -88,16 +94,14 @@ export default function ServiceSlider() {
 
       {/* ================= WHY CHOOSE US ================= */}
       <section className="why-choose-section">
-        
         <div className="why-choose-header">
-
           <div className="why-choose-left">
             <motion.span
               className="section-tag"
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              viewport={{ once: true, amount: 0.6 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
             >
               Why choose us <span className="highlight-trust">?</span>
             </motion.span>
@@ -105,8 +109,8 @@ export default function ServiceSlider() {
             <motion.h2
               initial={{ opacity: 0, x: -60 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-              viewport={{ once: true, amount: 0.6 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
             >
               Why You Should Choose Our <br /> Home Loan Services
             </motion.h2>
@@ -116,25 +120,23 @@ export default function ServiceSlider() {
             <motion.p
               initial={{ opacity: 0, x: 60 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-              viewport={{ once: true, amount: 0.6 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
             >
-              At T-Home, we make your home loan journey simple and stress-free
-              with personalized plans, low interest rates, and quick approvals.
-              Our transparent process ensures minimal paperwork and no hidden
-              charges, while our team supports you every step of the way—helping
-              you move into your dream home with ease and confidence.
+              At T-Home, we are redefining how people find, design, and secure
+            their dream homes. With a customer-first approach, we bring
+            together real estate expertise, modern interiors, and reliable
+            property services under one roof.
             </motion.p>
           </div>
-
         </div>
 
         <motion.div
           className="why-choose-image"
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
         >
           <img src="/images/team.jpg" alt="Our Team" />
         </motion.div>

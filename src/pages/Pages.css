@@ -1074,6 +1074,24 @@
   color: #221e45;
 }
 
+/* Active card highlight */
+.service-card.active {
+  background: #1b3b5c;
+  transform: translateY(-12px) scale(1.02);
+}
+
+.service-card.active h3,
+.service-card.active p,
+.service-card.active a {
+  color: #ffffff;
+}
+
+/* Smooth image change */
+.service-image-box img {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+
 /* ================= HOVER ================= */
 .service-card:hover {
   background: #1b3b5c;
@@ -1085,6 +1103,7 @@
 .service-card:hover a {
   color: #ffffff;
 }
+
 
 
   /* Login */
