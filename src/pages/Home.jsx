@@ -556,6 +556,7 @@ export default function Home() {
         shortlisted the best home loan offers which has always been a major
         pain point.
       </p>
+      <div className="stars">★★★★★</div>
     </motion.div>
 
   </div>
