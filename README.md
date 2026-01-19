@@ -40,12 +40,10 @@ To run or edit the website locally:
 2. Navigate into the project folder:
 
     cd <project-folder>
-    --
-
    
-4. Install dependencies:
+   
+3. Install dependencies:
     npm install
-   --
 
 
    
