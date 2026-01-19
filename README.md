@@ -39,15 +39,20 @@ To run or edit the website locally:
    git clone <your-repo-link>
 2. Navigate into the project folder:
 
-    cd <project-folder>
+    cd project-folder
    
    
 3. Install dependencies:
+   
+
+   
     npm install
 
 
    
 4.Start the development server:
+
+
     npm start
 ## Author 
 
