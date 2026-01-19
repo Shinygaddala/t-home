@@ -1,12 +1,49 @@
-# React + Vite
+# T-Home — Finance Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🔗 **Deployed Link:** [https://t-home-pi.vercel.app](https://t-home-pi.vercel.app)
 
-Currently, two official plugins are available:
+## 🧾 Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**T-Home** is a modern, responsive finance website designed to provide visitors with clear information about financial services. The website is structured for easy navigation and focuses on delivering content across multiple sections: Home, About, Services, and Contact. T-Home aims to create a professional and visually appealing online presence for finance-related services.
 
-## Expanding the ESLint configuration
+## 🌐 Website Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The website includes the following main sections:
+
+- **Home:** A welcoming landing page introducing T-Home and its core message.  
+- **About:** Information about the website, its mission, and objectives in the finance domain.  
+- **Services:** Detailed description of the financial services offered.  
+- **Contact:** A page with contact information and/or a contact form for visitors to get in touch.
+
+## ✨ Features / Highlights
+
+- Modern and responsive design  
+- Smooth animations with Framer Motion  
+- Easy navigation between sections  
+- Visually appealing icons using SAG Icons  
+- Informational content about finance services  
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React.js for building dynamic UI  
+- **Styling:** CSS for layout and styling  
+- **Animations:** Framer Motion for smooth animations and interactions  
+- **Icons:** SAG Icons for visual elements and icons  
+
+## 📦 Project Setup (Local Development)
+
+To run or edit the website locally:
+
+1. Clone the repository:
+   ```bash
+   git clone <your-repo-link>
+2. Navigate into the project folder:
+    cd <project-folder>
+3. Install dependencies:
+    npm install
+4.Start the development server:
+    npm start
+## Author 
+
+Shiny Gaddala 
+B.Tech (Artificial Intelligence and Data Science)
